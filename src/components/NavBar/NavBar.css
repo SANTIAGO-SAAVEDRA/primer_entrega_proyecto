@@ -1,0 +1,30 @@
+.contenedor{
+    width: 120rem;
+}
+
+.barraNav{
+    background-color: #0097A7;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.barraNav ul li{
+    display: inline-block;
+}
+@media (min-width: 768px) {
+    .barraNav {
+        flex-direction: row;
+    }
+}
+.barraNav a{
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 1rem;    
+}
+.barraNav a:hover{
+    background-color: #ffc107;
+    color: #212121;
+}

@@ -1,0 +1,8 @@
+.title a{
+    font-size: 1.7rem;
+    text-decoration: none;
+}
+
+.title{
+    display: inline-block;
+}

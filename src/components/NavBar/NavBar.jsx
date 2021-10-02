@@ -5,7 +5,7 @@ import { Title } from "../Title/Title";
 import './NavBar.css'
 
 const NavBar = () => {
-    return <>
+    return <React.Fragment>
         <Container>
             <NavBar.Brand href="#home"><Title /></NavBar.Brand>
             <nav className="barraNav contenedor">
@@ -40,7 +40,7 @@ const NavBar = () => {
                 <CartWidget />
             </Link>
         </Container>
-    </>
+    </React.Fragment>
 }
 
 

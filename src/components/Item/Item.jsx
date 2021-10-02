@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Item = (producto) => {
+const Item = (producto) => {
     return (
         <div key={producto.id} className="card w-25 mt-5">
 
@@ -20,3 +20,5 @@ export const Item = (producto) => {
         </div>
     )
 }
+
+export default Item;

@@ -2,8 +2,8 @@ import React from 'react'
 
 export const Contacto = () => {
     return (
-        <div>
+        <React.Fragment>
             <p>Contacto</p>
-        </div>
+        </React.Fragment>
     )
 }

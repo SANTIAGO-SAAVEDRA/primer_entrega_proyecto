@@ -12,11 +12,16 @@ const productos = [
     { "id": 10, "name": "Divergente", "category": "juvenil", "price": 1000, "img": "http://dummyimage.com/165x.png/cc0000/ffffff" }
   ];
 
-const getFetch = new Promise((resolve) => {
+const getFetch = new Promise((res, rej) => {
 
-    setTimeout(()=>{
-        resolve(productos)
-    }, 3000)
-  })
+    let respuesta = '200';
+    if(respuesta === '200'){
+      setTimeout(()=>{
+        res(productos)
+      }, 3000)
+    }else{
+      rej('404');
+    }}
+  )
 
 export default getFetch;

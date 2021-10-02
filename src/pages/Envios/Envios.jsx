@@ -2,8 +2,8 @@ import React from 'react'
 
 export const Envios = () => {
     return (
-        <div>
+        <React.Fragment>
             <p>Envios</p>
-        </div>
+        </React.Fragment>
     )
 }

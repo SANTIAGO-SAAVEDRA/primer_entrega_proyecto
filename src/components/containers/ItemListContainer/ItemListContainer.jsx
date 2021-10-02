@@ -1,7 +1,6 @@
 import React from 'react';
 import { useState, useParams, useEffect } from 'react';
 import getFetch from '../../../util/Mock';
-import ReactDOM from 'react-dom';
 import { ItemList } from '../../ItemList/ItemList';
 
 const ItemListContainer = (greeting) => 
@@ -10,6 +9,9 @@ const ItemListContainer = (greeting) =>
     const [loading, setLoading] = useState(true)
     const { idCategory} = useParams();
 
+    const onAdd = (cant) => {
+        console.log(cant);
+    }
     useEffect(() => {
 
         if(idCategory){
@@ -22,13 +24,14 @@ const ItemListContainer = (greeting) =>
                 .finally(() => setLoading(false))
         } else {
             getFetch
-            .then(res => 
+            .then(respuesta => 
                 {
-                    setProductos(res)
-                    setLoading(false)
+                    setProductos(respuesta)
                 })
+                .catch(error => console.log(error))
             }
             }, [idCategory])
+            
     console.log(productos);
 
     console.log(idCategory);

@@ -10,6 +10,7 @@ import { Contacto } from './pages/Contacto/Contacto';
 import { Envios } from './pages/Envios/Envios';
 import { Nosotros } from './pages/Nosotros/Nosotros';
 import { Cart } from './pages/Cart/Cart';
+import CartWidget from './components/CartWidget/CartWidget';
 
 
 function App() {
@@ -37,6 +38,8 @@ function App() {
         </Route>
 
         <Route exact path='/cart'>
+          <CartWidget/>
+          {iconCart()}
           <Cart/>
         </Route>
       </Switch>

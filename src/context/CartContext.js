@@ -24,7 +24,16 @@ export default function CartContextProvider ({children}){
         }else {
             setCart([...cart, {item, quantity}])
         }
+
     }
+    const vaciarCarrito=()=>{
+        setCart([]);
+    }
+
+    const iconCart = () => {
+        return setCart.reduce( (acum, valor) => acum + valor.quantity, 0)
+    }
+
 
     const IsInCart = (id) => cart.find(element => element.item.id === id)
 
@@ -36,7 +45,7 @@ export default function CartContextProvider ({children}){
     }
 
     return (
-        <CartContext.Provider value={cart, addItem, clear, removeItem}>
+        <CartContext.Provider value={cart, addItem, clear, removeItem, vaciarCarrito}>
             {children}
         </CartContext.Provider>
     )

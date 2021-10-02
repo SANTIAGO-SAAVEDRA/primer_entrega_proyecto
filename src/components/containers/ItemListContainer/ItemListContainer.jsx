@@ -1,11 +1,13 @@
 import React from 'react';
 import { useState, useParams, useEffect } from 'react';
-import getFetch from '../../../util/Mock';
+import { getFireStore } from '../../../services/getFirebase/getFirebase';
+
 import { ItemList } from '../../ItemList/ItemList';
 
 const ItemListContainer = (greeting) => 
 {
     const [productos, setProductos] = useState([])
+    const [item, setItem] = useState({})
     const [loading, setLoading] = useState(true)
     const { idCategory} = useParams();
 
@@ -14,6 +16,15 @@ const ItemListContainer = (greeting) =>
     }
     useEffect(() => {
 
+        const dbQuery = getFireStore()
+
+        dbQuery.collection('items').doc('').get()
+        .then(resp => {
+            setProductos( resp.docs.maps(item => ({id: item.id, ...item.data()}))
+                setItem({id: resp.id, ...resp.data()})
+            )})
+        .catch(err => console.log(err))
+        .finally(() => setLoading(false))
         if(idCategory){
             getFetch
             .then(respuesta => 
